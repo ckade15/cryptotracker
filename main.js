@@ -1,25 +1,18 @@
-function reqListener() {
-    console.log(this.responseText);
-}
-
-const xhr = new XMLHttpRequest();
-xhr.addEventListener('load', reqListener);
-
 function createRequest(){
+    const xhr = new XMLHttpRequest();
     xhr.responseType = 'JSON';
     
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            console.log(xhr.responseText);
+            let json = JSON.parse(xhr.responseText);
+
         }
     }
-    xhr.open('get','https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ccardano%2Cchainlink&vs_currencies=USD', true);
+    xhr.open('get','https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false', true);
     xhr.send();
-    let json = JSON.parse(xhr.response);
-    return xhr.responseType;
-    
-
+    let json = new xhr.responseText;
+    //console.log(json);
 }
 
-//const price = createRequest();
+//const prices = createRequest();
 //console.log(price);
