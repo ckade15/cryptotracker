@@ -13,7 +13,7 @@ function createRequest(){
             console.log(xhr.responseText);
         }
     }
-    xhr.open('get','https://www.cryptingup.com/api/markets', true);
+    xhr.open('get','https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Ccardano%2Cchainlink&vs_currencies=USD', true);
     xhr.send();
     let json = JSON.parse(xhr.response);
     return xhr.responseType;
@@ -21,5 +21,5 @@ function createRequest(){
 
 }
 
-const price = createRequest();
-console.log(price);
+//const price = createRequest();
+//console.log(price);
