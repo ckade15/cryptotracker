@@ -8,7 +8,23 @@ function createRequest(){
         if (xhr.readyState == 4 && xhr.status == 200) {
             const json = JSON.parse(xhr.responseText);
             console.log(json);
-            return json;
+            //return json;
+            for (let i = 0; i < json.length; i++){
+                const coin = json[i];
+                const coinName = coin['name'];
+                const symbol = coin['symbol'];
+                const price = coin['current_price'];
+                const priceHigh = coin['high_24h'];
+                const priceLow = coin['low_24h'];
+                const marketCap = coin['market_cap'];
+                const circSupply = coin['circulating_supply'];
+                const totalSupply = coin['total_supply'];
+                let html = "<div class='coin-cont'><h4>" + coinName + "</h4><div class='desc-cont'><p class='header'>Symbol:</p><p class='info'>" +  symbol +"</p><p class='header'>Current Price:</p><p class='info'>" + price + "</p><p class='header'>Price High (last 24h):</p><p class='info>" + priceHigh + "</p><p class='header'>Price Low (last 24h):</p><p class='info'>" + priceLow + "</p><p class='header'>Market Cap:</p><p class='info'>" + marketCap + "</p><p class='header'>Circulating Supply:</p><p class='info'>" + circSupply + "</p><p class='header'>Max Supply</p><p class='info'>" + totalSupply + "</p></div></div>";
+                $('#pop').append(html);
+
+                
+            }
+            
 
         }
     }
@@ -20,6 +36,13 @@ function createRequest(){
 }
 
 $(document).ready(function() {
-    let req = createRequest;
-    console.log(req);
+    let req = createRequest();
+    /*for (let i = 0; 1; i++){
+        let coin = req[i];
+        console.log(coin);
+        let price = coin[0];
+        console.log(price);
+    }*/
+    let coin = req[0];
+    console.log(coin);
 });
