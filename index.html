@@ -11,76 +11,43 @@
 </head>
 <body>
     <header>
-        <h1>Live Cryptocurrency Prices</h1>
+        <h1>Live Cryptocurrency Price Dashboard</h1>
     </header>
     <main>
-        <h3>Popular Cryptocurrencies</h3>
-        <section id='pop'>
-            <div class="coin-cont">
-                <h4></h4>
-                <div class="desc-cont">
-                    <p class="header">Current Price:</p><p class="info"></p>
-                    <p class="header">Price High (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Price Low (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Market Cap:</p><p class="info"></p>
-                    <p class="header">Circulating Supply:</p><p class="info"></p>
-                    <p class="header">Max Supply:</p><p class="info"></p>
-                </div>
+        <section>
+            <h4>Enter the name of the coin you would like to search for:</h4>
+            <input type="text">
+            <button id="search">Search Currency</button>
+        </section>
+        <section id="stat-box">
+            <h4 id="coin-name"></h4>
+            <div>
+                <h6>Symbol:</h6>
+                <p></p>
             </div>
-            <div class="coin-cont">
-                <h4>Ethereum</h4>
-                <div class="desc-cont">
-                    <p class="header">Current Price:</p><p class="info"></p>
-                    <p class="header">Price High (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Price Low (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Market Cap:</p><p class="info"></p>
-                    <p class="header">Circulating Supply:</p><p class="info"></p>
-                    <p class="header">Max Supply:</p><p class="info"></p>
-                </div>
+            <div>
+                <h6>Current Price:</h6>
+                <p></p>
             </div>
-            <div class="coin-cont">
-                <h4>Tether</h4>
-                <div class="desc-cont">
-                    <p class="header">Current Price:</p><p class="info"></p>
-                    <p class="header">Price High (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Price Low (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Market Cap:</p><p class="info"></p>
-                    <p class="header">Circulating Supply:</p><p class="info"></p>
-                    <p class="header">Max Supply:</p><p class="info"></p>
-                </div>
+            <div>
+                <h6>Price High (last 24h):</h6>
+                <p></p>
             </div>
-            <div class="coin-cont">
-                <h4>Cardano</h4>
-                <div class="desc-cont">
-                    <p class="header">Current Price:</p><p class="info"></p>
-                    <p class="header">Price High (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Price Low (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Market Cap:</p><p class="info"></p>
-                    <p class="header">Circulating Supply:</p><p class="info"></p>
-                    <p class="header">Max Supply:</p><p class="info"></p>
-                </div>
+            <div>
+                <h6>Price Low (last 24h):</h6>
+                <p></p>
             </div>
-            <div class="coin-cont">
-                <h4></h4>
-                <div class="desc-cont">
-                    <p class="header">Current Price:</p><p class="info"></p>
-                    <p class="header">Price High (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Price Low (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Market Cap:</p><p class="info"></p>
-                    <p class="header">Circulating Supply:</p><p class="info"></p>
-                    <p class="header">Max Supply:</p><p class="info"></p>
-                </div>
+            <div>
+                <h6>Market Cap:</h6>
+                <p></p>
             </div>
-            <div class="coin-cont">
-                <h4>Litecoin</h4>
-                <div class="desc-cont">
-                    <p class="header">Current Price:</p><p class="info"></p>
-                    <p class="header">Price High (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Price Low (last 24 hours):</p><p class="info"></p>
-                    <p class="header">Market Cap:</p><p class="info"></p>
-                    <p class="header">Circulating Supply:</p><p class="info"></p>
-                    <p class="header">Max Supply:</p><p class="info"></p>
-                </div>
+            <div>
+                <h6>Circulating Supply:</h6>
+                <p></p>
+            </div>
+            <div>
+                <h6>Total Supply:</h6>
+                <p></p>
             </div>
         </section>
     </main>

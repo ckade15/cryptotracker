@@ -7,7 +7,8 @@ function createRequest(){
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
             const json = JSON.parse(xhr.responseText);
-            console.log(json);
+            //console.log(json);
+            
             //return json;
             for (let i = 0; i < json.length; i++){
                 const coin = json[i];
@@ -19,30 +20,20 @@ function createRequest(){
                 const marketCap = coin['market_cap'];
                 const circSupply = coin['circulating_supply'];
                 const totalSupply = coin['total_supply'];
-                let html = "<div class='coin-cont'><h4>" + coinName + "</h4><div class='desc-cont'><p class='header'>Symbol:</p><p class='info'>" +  symbol +"</p><p class='header'>Current Price:</p><p class='info'>" + price + "</p><p class='header'>Price High (last 24h):</p><p class='info>" + priceHigh + "</p><p class='header'>Price Low (last 24h):</p><p class='info'>" + priceLow + "</p><p class='header'>Market Cap:</p><p class='info'>" + marketCap + "</p><p class='header'>Circulating Supply:</p><p class='info'>" + circSupply + "</p><p class='header'>Max Supply</p><p class='info'>" + totalSupply + "</p></div></div>";
-                $('#pop').append(html);
-
-                
+                const values = [coin, symbol, price, priceHigh, priceLow, marketCap, circSupply, totalSupply];
+                //let html = "<div class='coin-cont'><h4>" + coinName + "</h4><div class='desc-cont'><p class='header'>Symbol:</p><p class='info'>" +  symbol + "</p><p class='header'>Current Price:</p><p class='info'>" + price + "</p><p class='header'>Price High (last 24h):</p><p class='info>" + priceHigh + "</p><p class='header'>Price Low (last 24h):</p><p class='info'>" + priceLow + "</p><p class='header'>Market Cap:</p><p class='info'>" + marketCap + "</p><p class='header'>Circulating Supply:</p><p class='info'>" + circSupply + "</p><p class='header'>Max Supply:</p><p class='info'>" + totalSupply + "</p></div></div>";
+                //$('#coins_list').append(html);
+                return values;
             }
-            
-
         }
     }
     // This API request will return all prices along with other various information about cryptocurrencies.
     xhr.open('get','https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false', true);
     xhr.send();
-    
     //console.log(json);
 }
 
-$(document).ready(function() {
-    let req = createRequest();
-    /*for (let i = 0; 1; i++){
-        let coin = req[i];
-        console.log(coin);
-        let price = coin[0];
-        console.log(price);
-    }*/
-    let coin = req[0];
-    console.log(coin);
-});
+const dict = createRequest();
+if (dict !== undefined){
+    console.log(dict);
+}
