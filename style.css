@@ -15,6 +15,15 @@ header{
     height: 6em;
     background-image: linear-gradient(to top right, lightgray, cornflowerblue);
 }
+#pop-coins{
+    width:15%;
+    height: 10em;
+    margin: 2em auto;
+}
+img{
+    height: 10em;
+    width: 100%;
+}
 section{
     width: 40%;
     
@@ -77,6 +86,7 @@ p{
     margin: 0 auto;
     background-color: lightgrey;
     padding: 10px;
+    display: none;
 }
 
 div{
